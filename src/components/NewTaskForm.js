@@ -2,9 +2,9 @@ import React from "react";
 
 function NewTaskForm({ categories, onTaskFormSubmit }) {
 
-  const newCategories = categories.splice(1);
+  // const newCategories = categories.splice(1);
 
-   const renderCategory = newCategories.map(el=><option key={el}>{el}</option>)
+   const renderCategory = categories.filter((el) => el !== "All").map(el=><option key={el}>{el}</option>)
 
   return (
     <form onSubmit={onTaskFormSubmit} className="new-task-form">
